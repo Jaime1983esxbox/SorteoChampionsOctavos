@@ -1,0 +1,14 @@
+<div style="text-align: center;">
+    <h1>Sorteo Octavos de Final UEFA Champions League</h1>
+    <div *ngIf="ocultar">
+        <ul *ngFor="let confrontation of enfrentamientos" style="list-style: none; justify-content: left;">
+            <li>
+                <img [src]="confrontation.team1.img" alt="" style="width: 40px; margin-bottom: -5px; padding-right: 5px;">{{confrontation.team1.name}} {{confrontation.team1.country}}
+                <img [src]="confrontation.team2.img" alt="" style="width: 40px; margin-bottom: -5px; margin-left: 5px; padding-right: 5px;">{{confrontation.team2.name}} {{confrontation.team2.country}}
+            </li>
+        </ul>
+    </div>
+    <input *ngIf="sorteo" type="button" value="Hacer Sorteo" (click)="selectMatchups()">
+    <input *ngIf="volver" type="button" value="Volver" (click)="returnDraw()">
+</div>  
+    
